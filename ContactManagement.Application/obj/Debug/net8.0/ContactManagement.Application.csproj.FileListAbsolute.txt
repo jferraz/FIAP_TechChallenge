@@ -1,0 +1,12 @@
+C:\Users\jborg\source\repos\ContactManagement.Application\bin\Debug\net8.0\ContactManagement.Application.deps.json
+C:\Users\jborg\source\repos\ContactManagement.Application\bin\Debug\net8.0\ContactManagement.Application.dll
+C:\Users\jborg\source\repos\ContactManagement.Application\bin\Debug\net8.0\ContactManagement.Application.pdb
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ContactManagement.Application.csproj.AssemblyReference.cache
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ContactManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ContactManagement.Application.AssemblyInfoInputs.cache
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ContactManagement.Application.AssemblyInfo.cs
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ContactManagement.Application.csproj.CoreCompileInputs.cache
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ContactManagement.Application.dll
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\refint\ContactManagement.Application.dll
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ContactManagement.Application.pdb
+C:\Users\jborg\source\repos\ContactManagement.Application\obj\Debug\net8.0\ref\ContactManagement.Application.dll
