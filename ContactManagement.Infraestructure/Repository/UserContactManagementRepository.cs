@@ -9,7 +9,7 @@ namespace ContactManagement.Infraestructure.Repository
             throw new NotImplementedException();
         }
 
-        public void DeleteContact(UserContact contact)
+        public void DeleteContact(UserContact contact
         {
             throw new NotImplementedException();
         }
