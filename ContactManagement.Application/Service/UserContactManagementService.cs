@@ -1,4 +1,5 @@
-﻿using ContactManagement.Domain.Entities;
+﻿using ContactManagement.Domain.DTO;
+using ContactManagement.Domain.Entities;
 using ContactManagement.Infraestructure.Repository;
 
 namespace ContactManagement.Application.Service
@@ -12,7 +13,7 @@ namespace ContactManagement.Application.Service
             _repository = repository;
         }
 
-        public void CreateContact(UserContact contact)
+        public void CreateContact(UserContactDto contact)
         {
             try
             {
@@ -38,7 +39,7 @@ namespace ContactManagement.Application.Service
             }
         }
 
-        public Task<UserContact> GetContactById(int id)
+        public Task<UserContactDto> GetContactById(int id)
         {
             try
             {
@@ -53,7 +54,7 @@ namespace ContactManagement.Application.Service
             }
         }
 
-        public Task<UserContact> UpdateContact(UserContact contact)
+        public Task<UserContact> UpdateContact(UserContactDto contact)
         {
             try
             {

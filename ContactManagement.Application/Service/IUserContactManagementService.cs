@@ -1,12 +1,12 @@
-﻿using ContactManagement.Domain.Entities;
+﻿using ContactManagement.Domain.DTO;
 
 namespace ContactManagement.Application.Service
 {
     public interface IUserContactManagementService
     {
-        void CreateContact(UserContact contact);
+        void CreateContact(UserContactDto contact);
         void DeleteContact(int idContact);
-        Task<UserContact> GetContactById(int id);
-        Task<UserContact> UpdateContact(UserContact contact);
+        Task<UserContactDto> GetContactById(int id);
+        Task<UserContactDto> UpdateContact(UserContactDto contact);
     }
 }
