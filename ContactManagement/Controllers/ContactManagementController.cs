@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ContactManagement.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ContactManagementController : Controller
     {
         private readonly IUserContactManagementService _contactService;
@@ -15,7 +15,7 @@ namespace ContactManagement.Controllers
             _contactService = contactService;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetContactById(int id)
         {
             var contact = _contactService.GetContactById(id);
@@ -23,11 +23,11 @@ namespace ContactManagement.Controllers
             {
                 return NotFound();
             }
-            return View(contact);
+            return Ok(contact);
         }                
 
         
-        [HttpPost]
+        [HttpPost("Create/{contact}")]
         [ValidateAntiForgeryToken]
         public IActionResult Create(UserContact contact)
         {
@@ -36,22 +36,11 @@ namespace ContactManagement.Controllers
                 _contactService.CreateContact(contact);
                 return RedirectToAction(nameof(Index));
             }
-            return View(contact);
-        }
-
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            var contact = _contactService.GetContactById(id);
-            if (contact == null)
-            {
-                return NotFound();
-            }
-            return View(contact);
+            return Ok(contact);
         }
 
         
-        [HttpPost]
+        [HttpPost("Edit/{contact}")]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(UserContact contact)
         {
@@ -65,10 +54,10 @@ namespace ContactManagement.Controllers
                 _contactService.UpdateContact(contact);
                 return RedirectToAction(nameof(Index));
             }
-            return View(contact);
+            return Ok(contact);
         }
 
-        [HttpGet]
+        [HttpGet("Delete/{id}")]
         public IActionResult Delete(int id)
         {
             var contact = _contactService.GetContactById(id);
@@ -76,16 +65,7 @@ namespace ContactManagement.Controllers
             {
                 return NotFound();
             }
-            return View(contact);
-        }
-
-        
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            _contactService.DeleteContact(id);
-            return RedirectToAction(nameof(Index));
+            return Ok(contact);
         }
     }
 }
