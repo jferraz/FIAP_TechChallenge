@@ -8,11 +8,15 @@
 
   <ItemGroup>
     <Folder Include="Validator\" />
-    <Folder Include="Service\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ContactManagement.Domain\ContactManagement.Domain.csproj" />
+    <ProjectReference Include="..\ContactManagement.Infraestructure\ContactManagement.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>
