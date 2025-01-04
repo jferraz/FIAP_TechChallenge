@@ -1,27 +1,52 @@
 ﻿using ContactManagement.Domain.Entities;
+using ContactManagement.Infraestructure.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContactManagement.Infraestructure.Repository
 {
-    internal class UserContactManagementRepository : IUserContactManagementRepository
+    public class UserContactManagementRepository : IUserContactManagementRepository
     {
+        private readonly ApplicationContext _context;
+
+        public UserContactManagementRepository(ApplicationContext context)
+        {
+            _context = context;
+        }
+
         public void CreateContact(UserContact contact)
         {
-            throw new NotImplementedException();
+            _context.Contacts.Add(contact);
         }
 
-        public void DeleteContact(UserContact contact
+        public void DeleteContact(int idContact)
         {
-            throw new NotImplementedException();
+            var result = _context.Contacts.Where(c => c.Id == idContact).FirstOrDefault();
+            if (result == null)
+            {
+                throw new Exception("Data not found!");
+            }            
         }
 
-        public UserContact GetContactById(int id)
+        public async Task<UserContact> GetContactById(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Contacts.FindAsync(id);
+            if (result == null)
+            {
+                throw new Exception("Data not found!");
+            }
+            return result;
         }
 
-        public void UpdateContact(UserContact contact)
+        public async Task<UserContact> UpdateContact(UserContact contact)
         {
-            throw new NotImplementedException();
+            var existingContact = await _context.Contacts.FindAsync(contact.Id);
+            if (existingContact == null)
+            {
+                throw new Exception("Data not found!");
+            }
+            _context.Entry(existingContact).CurrentValues.SetValues(contact);
+            await _context.SaveChangesAsync();
+            return existingContact;
         }
     }
 }
